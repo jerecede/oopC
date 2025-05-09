@@ -8,8 +8,14 @@ namespace oopC
 {
     internal class VipCustomer: Customer
     {
-        private string? NamePrefix { get; set; }
-        private decimal NegativeThresHold { get; set; }
+        public string? NamePrefix { get; set; }
+        private decimal _negativeThreshold;
+
+        public decimal NegativeThresHold
+        {
+            get => _negativeThreshold;
+            set => _negativeThreshold = (value > 0) ? value : 0;
+        }
 
         public VipCustomer(string name, string surname, DateTime dob, string address, string mailAddress, decimal treshold) : base(name, surname, dob, address, mailAddress) //richiamo costruttore papa, non come js che dentro le graffe scrivo super()
         {
