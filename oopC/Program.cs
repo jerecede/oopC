@@ -1,4 +1,6 @@
-﻿namespace oopC
+﻿using System.Text;
+
+namespace oopC
 {
     internal class Program
     {
@@ -47,26 +49,32 @@
             //    Console.WriteLine(person.Welcome());
             //}
 
+            Console.OutputEncoding = Encoding.Unicode;
+
             var bankAcc1 = new BankAccount(c1, e1);
             bankAcc1.Operate(1000);
             bankAcc1.Operate(-500);
+            bankAcc1.Operate(1000);
             bankAcc1.Operate(-1500);
             Console.WriteLine(bankAcc1.ToString());
 
-            var bankAcc2 = new BankAccount(v1, e1);
-            bankAcc2.Operate(1000);
-            bankAcc2.Operate(-1500);
-            Console.WriteLine("\n\n" + bankAcc2.ToString());
+            bankAcc1.OrderByAmount();
+            Console.WriteLine("\n\n" + bankAcc1.ToString());
 
-            var saveAcc1 = new SavingsAccount(v1, e1);
-            saveAcc1.Operate(1000);
-            saveAcc1.Operate(-1500);
-            Console.WriteLine("\n\n" + saveAcc1.ToString());
+            //var bankAcc2 = new BankAccount(v1, e1);
+            //bankAcc2.Operate(1000);
+            //bankAcc2.Operate(-1500);
+            //Console.WriteLine("\n\n" + bankAcc2.ToString());
 
-            var cbAcc1 = new CashBackAccount(v1, e1);
-            cbAcc1.Operate(1000);
-            cbAcc1.Operate(-1500);
-            Console.WriteLine("\n\n" + cbAcc1.ToString());
+            //var saveAcc1 = new SavingsAccount(v1, e1);
+            //saveAcc1.Operate(1000);
+            //saveAcc1.Operate(-1500);
+            //Console.WriteLine("\n\n" + saveAcc1.ToString());
+
+            //var cbAcc1 = new CashBackAccount(v1, e1);
+            //cbAcc1.Operate(1000);
+            //cbAcc1.Operate(-1500);
+            //Console.WriteLine("\n\n" + cbAcc1.ToString());
         }
     }
 }

@@ -21,6 +21,7 @@ namespace oopC
 
         public override void Operate(decimal amount)
         {
+            //guaradare soluzione andrea, perche lui tiene traccia anche del cashback
             base.Operate(amount);
             if (amount < 0)
             {
@@ -31,7 +32,7 @@ namespace oopC
 
         public override string ToString()
         {
-            return $"CASHBACK {base.ToString()}\nCASHBACK\nCashBack Accumulated: {CashBack}\nCashBack Percentage: {CashBackPercentage * 100}%";
+            return $"CASHBACK {base.ToString()}\nCASHBACK\nCashBack Accumulated: {CashBack}€\nCashBack Percentage: {CashBackPercentage * 100}%";
         }
     }
 }
